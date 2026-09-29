@@ -1,0 +1,77 @@
+[
+  {
+    "chunk_id": "ACSM_001",
+    "topic": "Aerobic Exercise Frequency and Duration",
+    "content": "For healthy adults, ACSM recommends participating in moderate-intensity aerobic exercise for at least 150 minutes per week (e.g., 30 minutes, 5 days per week) or vigorous-intensity aerobic exercise for at least 75 minutes per week, or a combination of both."
+  },
+  {
+    "chunk_id": "ACSM_002",
+    "topic": "Aerobic Exercise Intensity Assessment",
+    "content": "Exercise intensity can be evaluated using the Talk Test or Heart Rate Reserve (HRR). Moderate intensity corresponds to 40% to 59% HRR, where a person can comfortably talk but not sing during exercise."
+  },
+  {
+    "chunk_id": "ACSM_003",
+    "topic": "Resistance Training Frequency for Beginners",
+    "content": "Novices and beginners should perform full-body resistance training 2 to 3 days per week, allowing at least 48 hours of recovery between sessions targeting the same muscle groups."
+  },
+  {
+    "chunk_id": "ACSM_004",
+    "topic": "Resistance Training Sets and Repetitions",
+    "content": "To improve muscular strength and endurance, beginners should execute 2 to 4 sets of 8 to 12 repetitions per major muscle group, using a moderate resistance that induces fatigue by the final repetition."
+  },
+  {
+    "chunk_id": "ACSM_005",
+    "topic": "Exercise Selection for Novices",
+    "content": "Beginner resistance programs should prioritize multi-joint compound exercises (such as squats, chest presses, rows, and shoulder presses) that recruit major muscle groups before isolation exercises."
+  },
+  {
+    "chunk_id": "ACSM_006",
+    "topic": "Proper Warm-up Structure",
+    "content": "A standard warm-up should last 5 to 10 minutes and consist of light-to-moderate intensity aerobic activity followed by dynamic stretching to prepare muscles, elevate heart rate, and prevent acute injury."
+  },
+  {
+    "chunk_id": "ACSM_007",
+    "topic": "Cool-down and Flexibility Guidelines",
+    "content": "Cool-down activities should involve 5 to 10 minutes of low-intensity cardiorespiratory exercise and static stretching. Static stretches should be held for 10 to 30 seconds to major muscle groups, repeated 2 to 4 times."
+  },
+  {
+    "chunk_id": "ACSM_008",
+    "topic": "Rest Intervals Between Sets",
+    "content": "For general muscular fitness, rest periods of 2 to 3 minutes between sets are recommended for major multi-joint exercises, while 1 to 2 minutes rest is sufficient for smaller muscle groups or lighter intensity."
+  },
+  {
+    "chunk_id": "ACSM_009",
+    "topic": "Progressive Overload Principle",
+    "content": "Novices should gradually increase exercise intensity or volume. A common progression rate is increasing the weight lifted or duration by 2% to 5% only after the target reps and sets can be performed with proper technique."
+  },
+  {
+    "chunk_id": "ACSM_010",
+    "topic": "Hydration Guidelines Around Exercise",
+    "content": "Individuals should drink 5 to 7 mL of water per kg of body weight at least 4 hours before exercise. During exercise, consume 400 to 800 mL per hour depending on sweat rate, and rehydrate post-exercise with fluid and sodium."
+  },
+  {
+    "chunk_id": "ACSM_011",
+    "topic": "Daily Protein Requirements for Active Individuals",
+    "content": "For active individuals and individuals starting resistance training, daily protein intake recommendations range from 1.2 to 2.0 grams per kilogram of body weight per day to support muscle repair and synthesis."
+  },
+  {
+    "chunk_id": "ACSM_012",
+    "topic": "General Nutrition & Carbohydrate Intake",
+    "content": "Carbohydrates serve as the primary energy source during moderate-to-high intensity workouts. Active individuals should aim for 3 to 5 grams of carbohydrates per kg of body weight daily for light/moderate physical activity."
+  },
+  {
+    "chunk_id": "ACSM_013",
+    "topic": "Breathing Technique During Resistance Training",
+    "content": "Proper breathing involves exhaling during the concentric phase (lifting the weight / exertion) and inhaling during the eccentric phase (lowering the weight). Holding breath (Valsalva maneuver) should generally be avoided by beginners."
+  },
+  {
+    "chunk_id": "ACSM_014",
+    "topic": "Post-Workout Protein & Timing",
+    "content": "Consuming 20 to 40 grams of high-quality protein within 2 hours following exercise maximizes muscle protein synthesis and aids post-workout muscle recovery."
+  },
+  {
+    "chunk_id": "ACSM_015",
+    "topic": "Signs of Overtraining and Inadequate Recovery",
+    "content": "Key indicators of overtraining include persistent muscle soreness, elevated resting heart rate, unexplained decrease in performance, chronic fatigue, and disturbed sleep patterns. Proper rest days must be incorporated."
+  }
+]
