@@ -178,19 +178,56 @@ def evaluate_mode(mode_name: str, run_fn):
         "Faithfulness / Grounding": f"{faithfulness_rate:.1f}%"
     }
 
-if __name__ == "__main__":
-    results = []
+def interactive_chat():
+    """Interactive CLI"""
+    print("\n" + "="*60)
+    print("  Welcome to FORM RAG Assistant (Interactive Chat Mode)")
+    print("  Type your question below (or type 'exit' to quit)")
+    print("="*60 + "\n")
     
-    results.append(evaluate_mode("1. Non-AI Keyword FAQ Baseline", run_baseline_keyword))
-    results.append(evaluate_mode("2. Zero-shot Ungrounded LLM", run_baseline_zeroshot))
-    results.append(evaluate_mode("3. FORM RAG Assistant (Proposed)", run_form_rag))
+    while True:
+        try:
+            user_question = input("\nUser > ").strip()
+            if not user_question:
+                continue
+            if user_question.lower() in ["exit", "quit", "q"]:
+                print("Exiting interactive mode. Goodbye!")
+                break
+            
+            print("\n[FORM RAG Processing...]")
+            answer, cited_ids = run_form_rag(user_question)
+            
+            print("\n--------------------------------------------------")
+            print(f"Assistant Response:\n{answer}")
+            if cited_ids:
+                print(f"\nCited ACSM Source Chunks: {cited_ids}")
+            print("--------------------------------------------------")
+            
+        except KeyboardInterrupt:
+            print("\nExiting interactive mode.")
+            break
 
-    print("\n" + "="*70)
-    print("                      FINAL EVALUATION RESULTS                     ")
-    print("="*70)
-    print(f"{'Approach':<35} | {'Abstain Rate':<13} | {'In-domain Rate':<15} | {'Faithfulness':<12}")
-    print("-" * 80)
-    for r in results:
-        print(f"{r['Mode']:<35} | {r['Abstention Rate (Out-of-Domain)']:<13} | {r['In-domain Answer Rate']:<15} | {r['Faithfulness / Grounding']:<12}")
-    print("-" * 80)
-    print(f"Total API Cost Spent Across All Evaluations: ${TOTAL_COST:.5f} USD")
+if __name__ == "__main__":
+    print("Select Mode:")
+    print("1. Run Full Benchmark Evaluation (40 Test Cases)")
+    print("2. Interactive Chat (Type your own questions)")
+    
+    choice = input("\nEnter choice (1 or 2): ").strip()
+    
+    if choice == "2":
+        interactive_chat()
+    else:
+        results = []
+        results.append(evaluate_mode("1. Non-AI Keyword FAQ Baseline", run_baseline_keyword))
+        results.append(evaluate_mode("2. Zero-shot Ungrounded LLM", run_baseline_zeroshot))
+        results.append(evaluate_mode("3. FORM RAG Assistant (Proposed)", run_form_rag))
+
+        print("\n" + "="*70)
+        print("                      FINAL EVALUATION RESULTS                     ")
+        print("="*70)
+        print(f"{'Approach':<35} | {'Abstain Rate':<13} | {'In-domain Rate':<15} | {'Faithfulness':<12}")
+        print("-" * 80)
+        for r in results:
+            print(f"{r['Mode']:<35} | {r['Abstention Rate (Out-of-Domain)']:<13} | {r['In-domain Answer Rate']:<15} | {r['Faithfulness / Grounding']:<12}")
+        print("-" * 80)
+        print(f"Total API Cost Spent Across All Evaluations: ${TOTAL_COST:.5f} USD")
