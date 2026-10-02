@@ -33,6 +33,7 @@
     "cited_chunk_ids": ["ACSM_001"]
   }
 * **Out-of-Domain Output (Safety Refusal):**
+  ```json
 {
   "answer": "Insufficient verified data to answer safely",
   "cited_chunk_ids": []
