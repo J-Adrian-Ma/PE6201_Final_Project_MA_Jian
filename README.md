@@ -1,13 +1,42 @@
 # FORM: A Guardrail-Enforced RAG Assistant for Beginner Fitness Advice
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-> **Course Project:** PE6201 Emerging AI Technologies
+> **Course:** PE6201 Emerging AI Technologies
+> **System Name:** FORM (Fitness Guidance RAG Assistant)  
 > **Author:** MA JIAN  
 
-## 📌 Project Overview
+---
+
+## 📌 Project Overview & User Persona
+
 **FORM** is a domain-bounded Retrieval-Augmented Generation (RAG) system designed to provide grounded, evidence-based fitness and nutrition advice to gym beginners. Powered by an **LLM Safety Guardrail** and strictly grounded in **ACSM (American College of Sports Medicine) guidelines**, the system eliminates hazardous silent failures by intercepting medical, rehabilitation, or out-of-domain queries.
+
+### Target User Persona
+* **Persona:** "Tor", a 24-year-old novice gym-goer.
+* **Context & Pain Point:** Tor stands in the weight room wanting to structure a safe 45-minute chest workout. Overwhelmed by contradictory online advice, he lacks exercise science expertise to distinguish safe practices from hazardous or injury-inducing protocols.
+* **Intended Behavioral Change:** Shifts Tor away from scrolling unverified forums toward obtaining immediate, 3-step routine adjustments grounded directly in ACSM standards.
+
+---
+
+## 🔤 Input & Output Specification
+
+### Input Specification
+* **Format:** Natural language text query via CLI or API.
+* **In-Domain Example:** `"How many sets should a beginner do for chest per week?"`
+* **Out-of-Domain Example:** `"How can I rehab a torn rotator cuff at home?"`
+
+### Output Specification
+* **Format:** Strictly enforced JSON Object (`json_object`).
+* **In-Domain Output (Structured Grounding):**
+  ```json
+  {
+    "answer": "Beginners should perform 2-3 full-body sessions per week, targeting 1-3 sets per muscle group per session.",
+    "cited_chunk_ids": ["ACSM_001"]
+  }
+* **Out-of-Domain Output (Safety Refusal):**
+{
+  "answer": "Insufficient verified data to answer safely",
+  "cited_chunk_ids": []
+}
 
 ---
 
@@ -51,9 +80,9 @@ The system was evaluated against **40 pre-frozen test cases** (25 in-domain fitn
 
 | Approach / Baseline | Abstention Rate (Out-of-Domain) | In-Domain Answer Rate | Faithfulness / Grounding | Total Evaluation Cost |
 | :--- | :---: | :---: | :---: | :---: |
-| **1. Non-AI Keyword FAQ Baseline** | 100.0% | 96.0% | 76.0% | $0.00000 USD |
-| **2. Zero-shot Ungrounded LLM** | 0.0% | 100.0% | 0.0% | $0.00120 USD |
-| **3. FORM RAG Assistant (Proposed)** | **100.0%** | **84.0%** | **84.0%** | **$0.00586 USD** |
+| **Non-AI Keyword FAQ Baseline** | 100.0% | 96.0% | 76.0% | $0.00000 USD |
+| **Zero-shot Ungrounded LLM** | 0.0% | 100.0% | 0.0% | $0.00120 USD |
+| **FORM RAG Assistant (Proposed)** | **100.0%** | **84.0%** | **84.0%** | **$0.00586 USD** |
 
 ### Key Findings:
 - **Zero-Shot Risk:** Ungrounded LLMs achieved **0.0% Abstention**, hallucinatorily answering dangerous medical/injury queries.
