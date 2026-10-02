@@ -112,4 +112,3 @@ python main.py
 - `main.py`: Core RAG execution, LLM Guardrail, and 40-case Evaluation Harness.
 - `acsm_kb.json`: Cleaned ACSM guideline knowledge chunks.
 - `test_cases.json`: Handcrafted 40 test cases paired with ground-truth assertions.
-- `docs/`: Academic project report detailing business & technical trade-offs.
